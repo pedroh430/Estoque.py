@@ -16,11 +16,10 @@ class Interface:
         self.root.mainloop()
         
      
-    def yyiy(self):
+    
   
   
-  
-  
+
   
   
        
