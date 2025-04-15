@@ -4,20 +4,10 @@ from tkinter import ttk
 import sqlite3 
 
 # Conexão com o banco
-conne = sqlite3.connect("Stock.db")
+conne = sqlite3.connect("Stock")
 cursor = conne.cursor()
 
-# Criação da tabela, se não existir
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS vidros (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    vidro TEXT NOT NULL,
-    cor TEXT NOT NULL,
-    caixas INTEGER NOT NULL,
-    unidade INTEGER NOT NULL
-)
-""")
-conne.commit()
+
 
 # Função de envio
 def send():
@@ -80,12 +70,12 @@ Entry(aba1, textvariable=multiplied).grid(row=3, column=1)
 
 Button(aba1, text='Enviar', font=('Coustard', 10, 'bold'), command=send).grid(row=4, column=1, pady=20)
 
-# Aba 2 - Retirada (ainda em branco para você usar)
+# Aba 2 - Retirada 
 aba2 = Frame(abas)
 abas.add(aba2, text="Retirada")
 Label(aba2, text="Tela de Retirada", font=('Coustard', 12)).pack(pady=30)
 
-# Aba 3 - Estoque (ainda em branco para você usar)
+# Aba 3 - Estoque 
 aba3 = Frame(abas)
 abas.add(aba3, text="Estoque")
 Label(aba3, text="Visualizar Estoque", font=('Coustard', 12)).pack(pady=30)
